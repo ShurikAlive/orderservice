@@ -1,0 +1,8 @@
+POST http://localhost:8000/api/v1/deleteOrder
+Content-Type: application/json
+
+{
+  "id": "cc6831fa-5dc0-47e5-4e42-a7b86d045149"
+}
+
+###

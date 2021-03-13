@@ -1,0 +1,36 @@
+CREATE DATABASE `cafe_test` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+
+
+CREATE TABLE `menu_items` (
+  `id_menu_item` int NOT NULL AUTO_INCREMENT,
+  `hash_id_menu_item` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id_menu_item`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+INSERT INTO `menu_items`
+(`hash_id_menu_item`)
+VALUES
+('6ba7b810-9dad-11d1-80b4-00c04fd430c8')
+,('b7f2e37b-31c3-4fcb-9d24-b6e0120cd0e0')
+,('a24902d9-ad8f-4050-a1ae-3373015aef47')
+,('ecc720a3-dc99-4100-87f7-1af8724f0a50')
+,('b90e4fc7-938e-4a20-9e5a-63cde5bbf273');
+
+
+CREATE TABLE `orders` (
+  `idOrder` int NOT NULL AUTO_INCREMENT,
+  `hesh_id_order` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idOrder`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Перечень заказов';
+
+
+CREATE TABLE `orders_items` (
+  `id_order_item` int NOT NULL AUTO_INCREMENT,
+  `id_order` int DEFAULT NULL,
+  `id_menu_item` int DEFAULT NULL,
+  `quantity` int DEFAULT NULL,
+  PRIMARY KEY (`id_order_item`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
